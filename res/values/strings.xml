@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AirDuctCalculator</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="cfm">CFM</string>
+    <string name="friction_rate_100_ft_">2. Enter friction rate</string>
+    <string name="friction_rate_100ft">Friction rate/100ft</string>
+    <string name="small_text">Small Text</string>
+    <string name="_1_select_duct_type_2_enter_cfm_of_duct_you_are_sizing_3_enter_the_friction_rate_a_friction_rate_of_04_08_will_produce_a_good_system_for_most_residences_the_lower_the_rate_the_quieter_the_system_4_read_the_velocity_if_it_is_greater_than_700_fpm_for_flex_duct_or_900_fpm_for_metal_duct_then_enlarge_the_duct_by_one_size_all_return_duct_should_be_limited_to_700_fpm_5_read_the_round_duct_size_6_to_convert_the_round_duct_to_rectangular_enter_the_desired_height_the_width_will_be_given_">1. Select duct type
+\n2. Enter CFM of duct you are sizing.
+\n3. Enter the friction rate (A friction rate of .04-.08 will produce a good system for most residences. The lower the rate the quieter the system.
+\n4. Read the velocity. If it is greater than 700 fpm for flex duct or 900 fpm for metal duct then enlarge the duct by one size. All return duct should be limited to 700 fpm
+\n5. read the round duct size.
+\n6. To convert the round duct to rectangular, enter the desired height, the width will be given.
+</string>
+    <string name="evenColor">#ff4500</string> 
+    <string name="oddColor">#333300</string> 
+     <string name="titleColor">#ff4500</string>
+    <string name="velocity_fpm_">FPM</string> 
+    <string name="_05">.05</string>
+    <string name="_1400">1400</string>
+    <string name="_782">782</string>
+    
+     <string name="duct_prompt">Choose a duct type</string>
+ 
+    <string-array name="ductType_arrays">
+        <item>metal duct</item>
+        <item>duct board</item>
+        <item>flex duct</item>
+    </string-array>
+        <string name="_2_enter_friction_rate">2. Enter Friction Rate</string>
+        <string name="_1_select_a_duct_type">1. Select a duct type</string>
+        <string name="_3_enter_air_volume">3. Enter air volume</string>
+        <string name="_4_velocity_of_air">4. Velocity of air</string>
+        <string name="round_duct_size">Round duct size</string>
+        <string name="air_duct_sizing_calculator">Air Duct Sizing Calculator</string>
+        <string name="imperial_units">Imperial Units</string>
+        <string name="_1_select_duct_type">1. Select duct type</string>
+        <string name="use_this_rate_to_size_entire_duct_system">Use this rate to size entire duct system</string>
+        <string name="a_friction_rate_of_04_08_will_produce_a_good_system_for_most_residences_the_lower_the_rate_the_quieter_the_system_">"A friction rate of .04 - .08 will produce a good system for most residences. The lower the rate the quieter the system.  "</string>
+        <string name="in_wc_100ft">in.wc/100ft</string>
+        <string name="fpm">FPM</string>
+        <string name="velocity_of_air">Velocity of Air</string>
+        <string name="if_the_velocity_is_greater_than_700_fpm_for_flex_duct_or_900_fpm_for_metal_duct_then_enlarge_duct_by_one_size_all_return_ducts_should_be_limited_to_700_fpm_">If the velocity is greater than 700 fpm for flex duct or 900 fpm for metal duct, then enlarge duct by one size. All return ducts should be limited to 700 fpm.</string>
+        <string name="convert_round_to_square_or_rectangle">Convert round to square or rectangle</string>
+        <string name="height_inches_">height(inches)</string>
+        <string name="width_inches_">width(inches)</string>
+        <string name="height_you_wish_duct_to_be">height you wish duct to be</string>
+        <string name="_06">.06</string>
+        <string name="_1059">1059</string>
+        <string name="_15">15</string>
+
+</resources>
