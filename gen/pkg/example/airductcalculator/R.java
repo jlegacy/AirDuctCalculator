@@ -32,6 +32,7 @@ public final class R {
         public static final int round=0x7f020004;
     }
     public static final class id {
+        public static final int Container=0x7f090000;
         public static final int TextDuctSizeBlank=0x7f090013;
         public static final int TextView04=0x7f090001;
         public static final int TextView1=0x7f090003;
@@ -43,7 +44,6 @@ public final class R {
         public static final int TextViewVelocity1=0x7f09000d;
         public static final int TextViewVelocity2=0x7f09000f;
         public static final int action_settings=0x7f090022;
-        public static final int container=0x7f090000;
         public static final int ductHeighText1=0x7f09001d;
         public static final int ductHeighText2=0x7f09001e;
         public static final int ductHeighText3=0x7f09001f;
@@ -70,7 +70,6 @@ public final class R {
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int fragment_main=0x7f030001;
     }
     public static final class menu {
         public static final int main=0x7f080000;
