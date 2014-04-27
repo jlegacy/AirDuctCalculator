@@ -48,7 +48,8 @@ public class MainSplash extends Activity {
 		MetricButton.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 
-				//CalculateResults('U');
+				 Intent intent = new Intent(context, MetricActivity.class);
+                 startActivity(intent);   
 
 			}
 

@@ -54,5 +54,16 @@
     <string name="imperial">Imperial</string>
     <string name="metric">Metric</string>
     <string name="todo">TODO</string>
+    <string name="title_activity_metric">MetricActivity</string>
+    <string name="metric_units">Metric Units</string>
+    <string name="pascals">pascals</string>
+    <string name="a_friction_rate_of_10_20_pascals_will_produce_a_good_system_for_most_residences_the_lower_the_rate_the_quieter_the_system_">A friction rate of 10-20 pascals will produce a good system for most residences. The lower the rate the quieter the system.</string>
+    <string name="cubic_meters_sec_">cubic meters/sec.</string>
+    <string name="meters_sec">meters/sec</string>
+    <string name="if_the_velocity_is_greater_than_3_5_m_s_for_flex_duct_or_4_5_m_s_for_metal_duct_then_enlarge_the_duct_by_one_size_all_return_duct_should_be_limited_to_3_5_m_s_fpm">If the velocity is greater than 3.5 m/s for flex duct or 4.5 m/s  for metal duct then enlarge the duct by one size. All return duct should be limited to 3.5 m/s fpm</string>
+    <string name="mm">mm</string>
+    <string name="height_mm_">height(mm)</string>
+    <string name="width_mm_">width(mm)</string>
+    <string name="_50">.50</string>
 
 </resources>

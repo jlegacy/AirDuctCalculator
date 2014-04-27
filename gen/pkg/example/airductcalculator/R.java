@@ -71,11 +71,14 @@ public final class R {
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int activity_main_splash=0x7f030001;
-        public static final int fragment_main_splash=0x7f030002;
+        public static final int activity_metric=0x7f030002;
+        public static final int fragment_main_splash=0x7f030003;
+        public static final int fragment_metric=0x7f030004;
     }
     public static final class menu {
         public static final int main=0x7f080000;
         public static final int main_splash=0x7f080001;
+        public static final int metric=0x7f080002;
     }
     public static final class string {
         public static final int _05=0x7f05000c;
@@ -89,36 +92,47 @@ public final class R {
         public static final int _2_enter_friction_rate=0x7f050010;
         public static final int _3_enter_air_volume=0x7f050012;
         public static final int _4_velocity_of_air=0x7f050013;
+        public static final int _50=0x7f050033;
         public static final int _782=0x7f05000e;
         public static final int a_friction_rate_of_04_08_will_produce_a_good_system_for_most_residences_the_lower_the_rate_the_quieter_the_system_=0x7f050019;
+        public static final int a_friction_rate_of_10_20_pascals_will_produce_a_good_system_for_most_residences_the_lower_the_rate_the_quieter_the_system_=0x7f05002c;
         public static final int action_settings=0x7f050002;
         public static final int air_duct_sizing_calculator=0x7f050015;
         public static final int app_name=0x7f050000;
         public static final int cfm=0x7f050003;
         public static final int convert_round_to_square_or_rectangle=0x7f05001e;
+        public static final int cubic_meters_sec_=0x7f05002d;
         public static final int duct_prompt=0x7f05000f;
         public static final int evenColor=0x7f050008;
         public static final int fpm=0x7f05001b;
         public static final int friction_rate_100_ft_=0x7f050004;
         public static final int friction_rate_100ft=0x7f050005;
         public static final int height_inches_=0x7f05001f;
+        public static final int height_mm_=0x7f050031;
         public static final int height_you_wish_duct_to_be=0x7f050021;
         public static final int hello_world=0x7f050001;
+        public static final int if_the_velocity_is_greater_than_3_5_m_s_for_flex_duct_or_4_5_m_s_for_metal_duct_then_enlarge_the_duct_by_one_size_all_return_duct_should_be_limited_to_3_5_m_s_fpm=0x7f05002f;
         public static final int if_the_velocity_is_greater_than_700_fpm_for_flex_duct_or_900_fpm_for_metal_duct_then_enlarge_duct_by_one_size_all_return_ducts_should_be_limited_to_700_fpm_=0x7f05001d;
         public static final int imperial=0x7f050026;
         public static final int imperial_units=0x7f050016;
         public static final int in_wc_100ft=0x7f05001a;
+        public static final int meters_sec=0x7f05002e;
         public static final int metric=0x7f050027;
+        public static final int metric_units=0x7f05002a;
+        public static final int mm=0x7f050030;
         public static final int oddColor=0x7f050009;
+        public static final int pascals=0x7f05002b;
         public static final int round_duct_size=0x7f050014;
         public static final int small_text=0x7f050006;
         public static final int titleColor=0x7f05000a;
         public static final int title_activity_main_splash=0x7f050025;
+        public static final int title_activity_metric=0x7f050029;
         public static final int todo=0x7f050028;
         public static final int use_this_rate_to_size_entire_duct_system=0x7f050018;
         public static final int velocity_fpm_=0x7f05000b;
         public static final int velocity_of_air=0x7f05001c;
         public static final int width_inches_=0x7f050020;
+        public static final int width_mm_=0x7f050032;
     }
     public static final class style {
         /** 
