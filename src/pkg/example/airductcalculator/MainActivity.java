@@ -12,7 +12,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	String[] day;
@@ -130,7 +129,6 @@ public class MainActivity extends Activity {
 		});
 
 		editFriction.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-			EditText editFriction = (EditText) findViewById(R.id.editFriction);
 
 			@Override
 			public void onFocusChange(View v, boolean hasFocus) {
@@ -149,7 +147,6 @@ public class MainActivity extends Activity {
 		});
 
 		editCFM.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-			EditText editCFM = (EditText) findViewById(R.id.editCFM);
 
 			@Override
 			public void onFocusChange(View v, boolean hasFocus) {
@@ -168,7 +165,6 @@ public class MainActivity extends Activity {
 
 		squareRoundEdit
 				.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-					EditText squareRoundEdit = (EditText) findViewById(R.id.squareRoundEdit);
 
 					@Override
 					public void onFocusChange(View v, boolean hasFocus) {
@@ -255,9 +251,9 @@ public class MainActivity extends Activity {
 
 		editVelocity.setText(String.valueOf((int) j23));
 
-		textDuctSize.setText(String.valueOf(Math.floor(d9 * 10) / 10));
+		textDuctSize.setText(String.valueOf(Math.ceil(d9 * 10) / 10));
 
-		textWidthDuctSize.setText(String.valueOf(Math.floor(l30 * 10) / 10));
+		textWidthDuctSize.setText(String.valueOf(Math.ceil(l30 * 10) / 10));
 
 	}
 

@@ -1,6 +1,7 @@
 package pkg.example.airductcalculator;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -129,7 +130,7 @@ public class MetricActivity extends Activity {
 		});
 
 		editFriction.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-			EditText editFriction = (EditText) findViewById(R.id.editFriction);
+	//		EditText editFriction = (EditText) findViewById(R.id.editFriction);
 
 			@Override
 			public void onFocusChange(View v, boolean hasFocus) {
@@ -148,8 +149,7 @@ public class MetricActivity extends Activity {
 		});
 
 		editCFM.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-			EditText editCFM = (EditText) findViewById(R.id.editCFM);
-
+		
 			@Override
 			public void onFocusChange(View v, boolean hasFocus) {
 				if (!hasFocus) {
@@ -167,8 +167,7 @@ public class MetricActivity extends Activity {
 
 		squareRoundEdit
 				.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-					EditText squareRoundEdit = (EditText) findViewById(R.id.squareRoundEdit);
-
+			
 					@Override
 					public void onFocusChange(View v, boolean hasFocus) {
 						if (!hasFocus) {
