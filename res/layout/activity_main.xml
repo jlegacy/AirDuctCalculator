@@ -234,7 +234,7 @@
 
     <TableRow
         android:id="@+id/tableRowVelocity"
-        android:layout_width="fill_parent"
+        android:layout_width="0dip"
         android:layout_height="wrap_content"
         android:background="#302c15" >
 
@@ -244,6 +244,7 @@
             android:layout_height="fill_parent"
             android:layout_weight=".5"
             android:gravity="left"
+            android:height="35dp"
             android:text="@string/velocity_of_air"
             android:textColor="#ffffff"
             android:textSize="12sp" />
@@ -251,10 +252,12 @@
         <TextView
             android:id="@+id/editVelocity"
             android:layout_width="0dp"
-            android:layout_height="25dp"
+            android:layout_height="35dp"
             android:layout_weight=".5"
             android:background="@drawable/outputfields"
-            android:ems="10" />
+            android:ems="10"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/TextViewVelocity2"
@@ -316,10 +319,11 @@
         <TextView
             android:id="@+id/textDuctSize"
             android:layout_width="0dp"
-            android:layout_height="35dp"
             android:layout_weight=".5"
             android:background="@drawable/outputfields"
-            android:ems="10" />
+            android:ems="10"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#000000" />
 
         <TextView
             android:id="@+id/TextDuctSizeBlank"
@@ -413,7 +417,9 @@
             android:layout_height="match_parent"
             android:layout_weight=".5"
             android:background="@drawable/outputfields"
-            android:ems="10" />
+            android:ems="10"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#000000" />
      
     </TableRow>
     

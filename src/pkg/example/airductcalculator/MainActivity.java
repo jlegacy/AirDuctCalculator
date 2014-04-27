@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -67,6 +68,10 @@ public class MainActivity extends Activity {
 		EditText editCFM = (EditText) findViewById(R.id.editCFM);
 		EditText squareRoundEdit = (EditText) findViewById(R.id.squareRoundEdit);
 
+		
+		TextView editVelocity = (TextView) findViewById(R.id.editVelocity);
+		TextView textDuctSize = (TextView) findViewById(R.id.textDuctSize);
+		TextView textWidthDuctSize = (TextView) findViewById(R.id.textWidthDuctSize);
 		// ***********************************************
 		// Set up Duct Type Spinner Actions
 		// ***********************************************
@@ -96,7 +101,37 @@ public class MainActivity extends Activity {
 			}
 
 		});
+		
+		editVelocity.setOnClickListener(new OnClickListener() 
+		{
+			public void onClick(View v) {
 
+				CalculateResults('U');		
+
+			}
+			
+		});	
+		
+		textDuctSize.setOnClickListener(new OnClickListener() 
+		{
+			public void onClick(View v) {
+
+				CalculateResults('U');		
+
+			}
+			
+		});	
+		
+		textWidthDuctSize.setOnClickListener(new OnClickListener() 
+		{
+			public void onClick(View v) {
+
+				CalculateResults('U');		
+
+			}
+			
+		});	
+		
 		editFriction.setOnFocusChangeListener(new View.OnFocusChangeListener() {
 			EditText editFriction = (EditText) findViewById(R.id.editFriction);
 
