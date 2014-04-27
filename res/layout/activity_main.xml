@@ -422,54 +422,6 @@
             android:textColor="#000000" />
      
     </TableRow>
-    
-      <TableRow
-          android:id="@+id/ductHeightText"
-          android:layout_width="fill_parent"
-          android:layout_height="wrap_content"
-          android:background="#302c15" >
-
-        <TextView
-            android:id="@+id/ductHeighText1"
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:layout_weight=".5"
-            android:gravity="left"
-            android:text=""
-            android:textColor="#ffffff"
-            android:textSize="12sp" />
-
-        <TextView
-            android:id="@+id/ductHeighText2"
-            android:layout_width="0dp"
-            android:layout_weight=".5"
-            android:text="@string/height_you_wish_duct_to_be"
-            android:textSize="12sp"
-            android:textColor="#ffffff" />
-
-        <TextView
-            android:id="@+id/ductHeighText3"
-            android:layout_width="0dp"
-            android:layout_weight=".5"
-            android:text=""
-            android:textColor="#ffffff" />
-    </TableRow>
-
-     <TableRow
-         android:id="@+id/lastblankrow"
-         android:layout_width="fill_parent"
-         android:layout_height="wrap_content"
-         android:background="#302c15" >
-
-          <TextView
-            android:id="@+id/ductlastRowHeight3"
-            android:layout_width="0dp"
-            android:layout_weight=".5"
-            android:text=""
-            android:textColor="#ffffff" 
-        
-        />
-          </TableRow>
        
         
      
