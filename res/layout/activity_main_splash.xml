@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="pkg.example.airductcalculator.MainSplash"
+    tools:ignore="MergeRootFrame" 
+        android:background="#ffffff" > 
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" 
+            android:layout_marginTop="17dp"
+            android:background="#ffffff"
+            android:src="@drawable/custom_ems" 
+            android:contentDescription="@string/todo"/>
+
+        <Button
+            android:id="@+id/ImperialButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageView1"
+            android:layout_below="@+id/imageView1"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="38dp"
+            android:text="@string/imperial"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/MetricButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/ImperialButton"
+            android:layout_alignBottom="@+id/ImperialButton"
+            android:layout_alignRight="@+id/imageView1"
+            android:layout_marginRight="30dp"
+            android:text="@string/metric"
+            android:textColor="#000000" />
+
+    </RelativeLayout>
+
+
+
