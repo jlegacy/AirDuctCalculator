@@ -14,7 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
-	String[] day;
+	String[] day; 
 
 	public static double getDuctValue(String ductType) {
 		if (ductType.compareTo("metal duct") == 0) {
@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
 		}
 	}
 
-	public static double getRoundToSquareValue(String RoundToSquareValue) {
+	public static double getSquareRoundEditValue(String RoundToSquareValue) {
 		if (RoundToSquareValue.trim().compareTo("") == 0) {
 			return 0.0;
 		} else {
@@ -82,12 +82,12 @@ public class MainActivity extends Activity {
 
 			public void onItemSelected(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
-				Toast.makeText(
-						getBaseContext(),
-						"Drop Down Contains"
-								+ arg0.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+			//	Toast.makeText(
+				//		getBaseContext(),
+				//		"Drop Down Contains"
+				//				+ arg0.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
 			
-				//CalculateResults('U');
+			CalculateResults('U');
 
 			}
 
@@ -103,12 +103,12 @@ public class MainActivity extends Activity {
 			@Override
 			public void onFocusChange(View v, boolean hasFocus) {
 				if (!hasFocus) {
-					Toast.makeText(
-							getBaseContext(),
-							"Friction Contains"
-									+ editFriction.getText().toString(), Toast.LENGTH_SHORT).show();
+					//Toast.makeText(
+					//		getBaseContext(),
+					//		"Friction Contains"
+					//				+ editFriction.getText().toString(), Toast.LENGTH_SHORT).show();
 					// setFrictionValue(editFriction.getText().toString());
-					// CalculateResults('U');
+					 CalculateResults('U');
 
 				}
 			}
@@ -121,11 +121,11 @@ public class MainActivity extends Activity {
 			@Override
 			public void onFocusChange(View v, boolean hasFocus) {
 				if (!hasFocus) {
-					Toast.makeText(
-							getBaseContext(),
-							"CFM Contains" + editCFM.getText().toString(), Toast.LENGTH_SHORT).show();
+					//Toast.makeText(
+					//		getBaseContext(),
+					//		"CFM Contains" + editCFM.getText().toString(), Toast.LENGTH_SHORT).show();
 					// setCFMValue(editCFM.getText().toString());
-					// CalculateResults('U');
+					 CalculateResults('U');
 
 				}
 			}
@@ -139,14 +139,14 @@ public class MainActivity extends Activity {
 					@Override
 					public void onFocusChange(View v, boolean hasFocus) {
 						if (!hasFocus) {
-							Toast.makeText(
-									getBaseContext(),
-									"Round to Square"
-											+ squareRoundEdit.getText()
-													.toString(),
-									Toast.LENGTH_SHORT).show();
+						//	Toast.makeText(
+						//			getBaseContext(),
+						//			"Round to Square"
+						//					+ squareRoundEdit.getText()
+						//							.toString(),
+						//			Toast.LENGTH_SHORT).show();
 							// setRoundToSquareValue(squareRoundEdit.getText().toString());
-						//	CalculateResults('U');
+							CalculateResults('U');
 
 						}
 					}
@@ -182,21 +182,28 @@ public class MainActivity extends Activity {
 		Spinner spinner = (Spinner) findViewById(R.id.ductTypeSpinner);
 		EditText editFriction = (EditText) findViewById(R.id.editFriction);
 		EditText editCFM = (EditText) findViewById(R.id.editCFM);
-	//	EditText squareRoundEdit = (EditText) findViewById(R.id.squareRoundEdit);
+		EditText squareRoundEdit = (EditText) findViewById(R.id.squareRoundEdit);
 		
 		TextView editVelocity = (TextView) findViewById(R.id.editVelocity);
 		editVelocity.setText("nan");
-		return;
-		/*
+		
+		TextView textDuctSize = (TextView) findViewById(R.id.textDuctSize);
+		textDuctSize.setText("nan");
+		
+		TextView textWidthDuctSize = (TextView) findViewById(R.id.textWidthDuctSize);
+		textWidthDuctSize.setText("nan");
+	
+		
 		// j17
 		int j17 = getCFMValue(editCFM.getText().toString());
+		
+		double j30 = getSquareRoundEditValue(squareRoundEdit.getText().toString());
 		// f5
 		double f5 = getFrictionValue(editFriction.getText().toString());
 		// k7
 		double k7 = getDuctValue(spinner.getSelectedItem().toString());
 
 		if ((j17 <= 0) || (f5 <= 0) || (k7 <= 0)) {
-			editVelocity.setText("nan");
 			return;
 		}
 
@@ -204,17 +211,23 @@ public class MainActivity extends Activity {
 		double e6 = (.109136 * Math.pow(j17, 1.9));
 
 		// d5
-		double d5 = e6 / f5;
+		double d5 = e6 / f5; 
 		// d9
 		double d9 = Math.pow(d5, (1 / 5.02)) * k7;
 		// j26 - I know this sucks for clarity, it going with it...
 		double j26 = d9;
 		// j23
 		double j23 = j17 / (((j26 / 2 * j26 / 2) * 3.14) / 144);
-
-	
-		editVelocity.setText(String.valueOf(j23)); */
-
+		// l30
+		double l30 = (3.14*((j26/2)*(j26/2))/j30)*1.18;
+		
+		
+		editVelocity.setText(String.valueOf((int) j23)); 
+		
+		textDuctSize.setText(String.valueOf(Math.floor(d9 * 10) / 10)); 
+		
+		textWidthDuctSize.setText(String.valueOf(Math.floor(l30 * 10) / 10));
+		
 	}
 
 	/**
