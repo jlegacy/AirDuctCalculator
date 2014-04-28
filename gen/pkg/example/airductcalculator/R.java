@@ -103,6 +103,7 @@ public final class R {
         public static final int convert_round_to_square_or_rectangle=0x7f05001e;
         public static final int cubic_meters_sec_=0x7f05002d;
         public static final int duct_prompt=0x7f05000f;
+        public static final int enter_the_height_you_wish_the_duct_to_be=0x7f050034;
         public static final int evenColor=0x7f050008;
         public static final int fpm=0x7f05001b;
         public static final int friction_rate_100_ft_=0x7f050004;

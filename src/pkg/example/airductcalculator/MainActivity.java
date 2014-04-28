@@ -2,6 +2,7 @@ package pkg.example.airductcalculator;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -70,6 +71,13 @@ public class MainActivity extends Activity {
 		TextView editVelocity = (TextView) findViewById(R.id.editVelocity);
 		TextView textDuctSize = (TextView) findViewById(R.id.textDuctSize);
 		TextView textWidthDuctSize = (TextView) findViewById(R.id.textWidthDuctSize);
+		
+		// retrieve value initially//
+		ImperialFriction g = ImperialFriction.getInstance();
+		if (g.getData() > 0) {
+			editFriction.setText(String.valueOf(g.getData()));
+		}
+		
 		// ***********************************************
 		// Set up Duct Type Spinner Actions
 		// ***********************************************
@@ -129,18 +137,19 @@ public class MainActivity extends Activity {
 		});
 
 		editFriction.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+			
+			EditText editFriction = (EditText) findViewById(R.id.editFriction);
 
 			@Override
 			public void onFocusChange(View v, boolean hasFocus) {
 				if (!hasFocus) {
-					// Toast.makeText(
-					// getBaseContext(),
-					// "Friction Contains"
-					// + editFriction.getText().toString(),
-					// Toast.LENGTH_SHORT).show();
-					// setFrictionValue(editFriction.getText().toString());
-					CalculateResults('U');
-
+					// Store//
+					ImperialFriction g = ImperialFriction.getInstance();
+					if (editFriction.getText().toString().trim().compareTo("") != 0) {
+						g.setData(Double.valueOf(editFriction.getText()
+								.toString()));
+						CalculateResults('U');
+					}
 				}
 			}
 
@@ -163,24 +172,17 @@ public class MainActivity extends Activity {
 
 		});
 
-		squareRoundEdit
-				.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+		squareRoundEdit.setOnKeyListener(new View.OnKeyListener() {
 
 					@Override
-					public void onFocusChange(View v, boolean hasFocus) {
-						if (!hasFocus) {
-							// Toast.makeText(
-							// getBaseContext(),
-							// "Round to Square"
-							// + squareRoundEdit.getText()
-							// .toString(),
-							// Toast.LENGTH_SHORT).show();
-							// setRoundToSquareValue(squareRoundEdit.getText().toString());
-							CalculateResults('U');
-
-						}
+					public boolean onKey(View v, int keyCode, KeyEvent event) {
+						 if (event.getAction() == KeyEvent.ACTION_UP) {
+							 CalculateResults('U');
+					        }
+						// TODO Auto-generated method stub
+						return false;
 					}
-
+					
 				});
 
 	}
@@ -253,7 +255,11 @@ public class MainActivity extends Activity {
 
 		textDuctSize.setText(String.valueOf(Math.ceil(d9 * 10) / 10));
 
-		textWidthDuctSize.setText(String.valueOf(Math.ceil(l30 * 10) / 10));
+		if ((String.valueOf(Math.ceil(l30 * 10) / 10)).compareTo("Infinity") != 0)
+		{
+			textWidthDuctSize.setText(String.valueOf(Math.ceil(l30 * 10) / 10));
+	
+		}
 
 	}
 

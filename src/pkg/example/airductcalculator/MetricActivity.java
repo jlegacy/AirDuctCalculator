@@ -1,8 +1,8 @@
 package pkg.example.airductcalculator;
 
 import android.app.Activity;
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -71,6 +71,13 @@ public class MetricActivity extends Activity {
 		TextView editVelocity = (TextView) findViewById(R.id.editVelocity);
 		TextView textDuctSize = (TextView) findViewById(R.id.textDuctSize);
 		TextView textWidthDuctSize = (TextView) findViewById(R.id.textWidthDuctSize);
+
+		// retrieve value initially//
+		MetricFriction g = MetricFriction.getInstance();
+		if (g.getData() > 0) {
+			editFriction.setText(String.valueOf(g.getData()));
+		}
+
 		// ***********************************************
 		// Set up Duct Type Spinner Actions
 		// ***********************************************
@@ -130,18 +137,18 @@ public class MetricActivity extends Activity {
 		});
 
 		editFriction.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-	//		EditText editFriction = (EditText) findViewById(R.id.editFriction);
+			EditText editFriction = (EditText) findViewById(R.id.editFriction);
 
 			@Override
 			public void onFocusChange(View v, boolean hasFocus) {
 				if (!hasFocus) {
-					// Toast.makeText(
-					// getBaseContext(),
-					// "Friction Contains"
-					// + editFriction.getText().toString(),
-					// Toast.LENGTH_SHORT).show();
-					// setFrictionValue(editFriction.getText().toString());
-					CalculateResults('U');
+					// Store//
+					MetricFriction g = MetricFriction.getInstance();
+					if (editFriction.getText().toString().trim().compareTo("") != 0) {
+						g.setData(Integer.valueOf(editFriction.getText()
+								.toString()));
+						CalculateResults('U');
+					}
 
 				}
 			}
@@ -149,7 +156,7 @@ public class MetricActivity extends Activity {
 		});
 
 		editCFM.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-		
+
 			@Override
 			public void onFocusChange(View v, boolean hasFocus) {
 				if (!hasFocus) {
@@ -165,25 +172,18 @@ public class MetricActivity extends Activity {
 
 		});
 
-		squareRoundEdit
-				.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+		squareRoundEdit.setOnKeyListener(new View.OnKeyListener() {
+
+			@Override
+			public boolean onKey(View v, int keyCode, KeyEvent event) {
+				 if (event.getAction() == KeyEvent.ACTION_UP) {
+					 CalculateResults('U');
+			        }
+				// TODO Auto-generated method stub
+				return false;
+			}
 			
-					@Override
-					public void onFocusChange(View v, boolean hasFocus) {
-						if (!hasFocus) {
-							// Toast.makeText(
-							// getBaseContext(),
-							// "Round to Square"
-							// + squareRoundEdit.getText()
-							// .toString(),
-							// Toast.LENGTH_SHORT).show();
-							// setRoundToSquareValue(squareRoundEdit.getText().toString());
-							CalculateResults('U');
-
-						}
-					}
-
-				});
+		});
 
 	}
 
@@ -223,41 +223,44 @@ public class MetricActivity extends Activity {
 		TextView textWidthDuctSize = (TextView) findViewById(R.id.textWidthDuctSize);
 		textWidthDuctSize.setText("");
 
-	
 		double j66 = getCFMValue(editCFM.getText().toString());
 
 		double j77 = getSquareRoundEditValue(squareRoundEdit.getText()
 				.toString());
-	
+
 		double j62 = getFrictionValue(editFriction.getText().toString());
-	
+
 		double j59 = getDuctValue(spinner.getSelectedItem().toString());
 
 		if ((j66 <= 0) || (j62 <= 0) || (j59 <= 0)) {
 			return;
 		}
-		double e51 = j66*2118.879;
+		double e51 = j66 * 2118.879;
 		double e52 = (.109136 * Math.pow(e51, 1.9));
-		
+
 		double f51 = j62 * .0040415;
 		double d51 = e52 / f51;
-		
+
 		double d55 = Math.pow(d51, (1 / 5.02)) * j59;
-		double e55 = d55/2;
-		
+		double e55 = d55 / 2;
+
 		// j26 - I know this sucks for clarity, it going with it...
-		double j73 = d55*25.4;
-		
-		
-		double l77 = (3.14*((j73/2)*(j73/2))/j77)*1.18;
-		
-		double j69 = (e51/((e55*e55*3.14))*144)*.0051;
+		double j73 = d55 * 25.4;
+
+		double l77 = (3.14 * ((j73 / 2) * (j73 / 2)) / j77) * 1.18;
+
+		double j69 = (e51 / ((e55 * e55 * 3.14)) * 144) * .0051;
 
 		editVelocity.setText(String.valueOf(Math.ceil(j69 * 1000) / 1000));
 
 		textDuctSize.setText(String.valueOf(Math.ceil(j73 * 1) / 1));
-
-		textWidthDuctSize.setText(String.valueOf(Math.ceil(l77 * 10) / 10));
+		
+		if ((String.valueOf(Math.ceil(l77 * 10) / 10)).compareTo("Infinity") != 0)
+				{
+			textWidthDuctSize.setText(String.valueOf(Math.ceil(l77 * 10) / 10));
+			
+				}
+		
 
 	}
 

@@ -65,5 +65,6 @@
     <string name="height_mm_">height(mm)</string>
     <string name="width_mm_">width(mm)</string>
     <string name="_50">.50</string>
+    <string name="enter_the_height_you_wish_the_duct_to_be">Enter the height you wish the duct to be</string>
 
 </resources>

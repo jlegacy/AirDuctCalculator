@@ -1,4 +1,4 @@
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android" 
     android:layout_width="fill_parent"
     android:layout_height="match_parent" 
     android:orientation="vertical"
@@ -122,7 +122,6 @@
             android:layout_height="fill_parent"
             android:layout_weight=".5"
             android:background="@drawable/round"
-            android:hint="@string/_15"
             android:inputType="number"
             android:paddingLeft="10dp"
             android:textColor="#ffffff" >
@@ -196,7 +195,6 @@
             android:layout_height="35dp"
             android:layout_weight=".5"
             android:background="@drawable/round"
-            android:hint="@string/_50"
             android:inputType="numberDecimal"
             android:paddingLeft="10dp"
             android:textColor="#ffffff" >
@@ -406,7 +404,6 @@
             android:layout_height="35dp"
             android:layout_weight=".5"
             android:background="@drawable/round"
-            android:hint="@string/_15"
             android:inputType="numberDecimal"
             android:paddingLeft="10dp" >
             <requestFocus />
@@ -423,9 +420,23 @@
             android:textColor="#000000" />
      
     </TableRow>
-       
-        
-     
+
+   <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#333300" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_gravity="left"
+            android:layout_span="3"
+            android:background="#302c15"
+            android:text="@string/enter_the_height_you_wish_the_duct_to_be"
+            android:textColor="#ff4500"
+            android:textSize="12sp"
+            android:textStyle="italic" />
+
+    </TableRow>
 
 </TableLayout>
 
